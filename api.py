@@ -3,11 +3,6 @@ from flask import request , Flask , jsonify
 
 app = Flask(__name__)
 
-##
-##
-##
-##print()
-
 @app.route('/externalapihandler/socialhandle' ,methods=['POST'])
 def create_task():
     username = request.json.get('linkedin')

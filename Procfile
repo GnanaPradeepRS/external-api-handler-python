@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT api:app
+web: gunicorn api:app
