@@ -18,11 +18,11 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
 @app.route("/externalapihandler/socialhandle",  methods=['POST'])
 def home_view():
     username = request.json.get('linkedin')
     auth = Linkedin('cruz.thepal@gmail.com', 'iwbah@77')
+    print(auth)
     profile = auth.get_company('riversand')
-    print('return')
+    print(profile)
     return jsonify({"count" : profile.get('followingInfo').get('followerCount')})
