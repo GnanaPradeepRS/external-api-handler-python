@@ -1,1 +1,1 @@
-web : waitress-serve --call 'flaskr:create_app'
+web : waitress-serve --listen=*:8000 website.wsgi:app
