@@ -1,9 +1,8 @@
 from linkedin_api import Linkedin
 from flask import request, Flask, jsonify
-import waitress
-import os
+
 app = Flask(__name__)
-print('entered')
+print('entered234')
 # @app.route('/externalapihandler/socialhandle' ,methods=['POST'])
 # def create_task():
 #     print('task')
@@ -14,12 +13,10 @@ print('entered')
 #     return jsonify({"count" : profile.get('followingInfo').get('followerCount')})
 
 
-@app.route('/', methods=['POST'])
-def create_task():
-    print('task')
-    return jsonify({'test': 'worked'})
+@app.route('/externalapihandler/socialhandle')
+def index():
+    return "<h1>Welcome to our server !!</h1>"
 
-port = int(os.environ.get('PORT', 33507))
-waitress.serve(app, port=port)
-app.run()
+if __name__ == '__main__':
+    app.run(threaded=True, port=5000)
 
