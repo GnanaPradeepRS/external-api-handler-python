@@ -1,3 +1,4 @@
 Flask
 linkedin_api
 gunicorn
+waitress
