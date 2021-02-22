@@ -27,5 +27,5 @@ def home_view():
         profile = auth.get_company('riversand')
         print(profile)
         return jsonify({"count" : profile.get('followingInfo').get('followerCount')})
-    except:
-        print('gone')
+    except Exception as error :
+        print(error)
