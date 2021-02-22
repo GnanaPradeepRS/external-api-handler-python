@@ -19,7 +19,7 @@ def create_task():
     print('task')
     return jsonify({'test': 'worked'})
 
-
-app.run()
 port = int(os.environ.get('PORT', 33507))
 waitress.serve(app, port=port)
+app.run()
+
